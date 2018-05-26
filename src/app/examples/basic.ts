@@ -13,28 +13,32 @@ export class BasicExample implements OnInit {
     ngOnInit() {
 
         this.itemList = [
-            { "countryId": 1, "itemName": "India" },
-            { "countryId": 2, "itemName": "Singapore" },
-            { "countryId": 3, "itemName": "Australia" },
-            { "countryId": 4, "itemName": "Canada" },
-            { "countryId": 5, "itemName": "South Korea" },
-            { "countryId": 6, "itemName": "Brazil" }
+            { 'id': 1, 'data': { 'itemName': 'India' } },
+            { 'id': 2, 'data': { 'itemName': 'Singapore' } },
+            { 'id': 3, 'data': { 'itemName': 'Australia' } },
+            { 'id': 4, 'data': { 'itemName': 'Canada' } },
+            { 'id': 5, 'data': { 'itemName': 'South Korea' } },
+            { 'id': 6, 'data': { 'itemName': 'Brazil' } }
         ];
 
         this.selectedItems = [
-            { "countryId": 1, "itemName": "India" },
-            { "countryId": 2, "itemName": "Singapore" },
-            { "countryId": 3, "itemName": "Australia" },
-            { "countryId": 4, "itemName": "Canada" }];
+            { 'id': 1, 'data': { 'itemName': 'India' } },
+            { 'id': 2, 'data': { 'itemName': 'Singapore' } },
+            { 'id': 3, 'data': { 'itemName': 'Australia' } },
+            { 'id': 4, 'data': { 'itemName': 'Canada' } }
+        ];
 
         this.settings = {
             text: "Select Countries",
             selectAllText: 'Select All',
             unSelectAllText: 'UnSelect All',
             classes: "myclass custom-class",
-            primaryKey: "countryId"
+            primaryKey: "countryId",
+            labelKey: 'data.itemName'
         };
+    
     }
+
     onItemSelect(item: any) {
         console.log(item);
         console.log(this.selectedItems);

@@ -4,12 +4,12 @@
             <span *ngIf="selectedItems?.length == 0">{{settings.text}}</span>
             <span *ngIf="settings.singleSelection">
                 <span *ngFor="let item of selectedItems;trackBy: trackByFn.bind(this);">
-                    {{item[settings.labelKey]}}
+                    {{getObjectKey(item,settings.labelKey)}}
                 </span>
             </span>
             <div class="c-list" *ngIf="selectedItems?.length > 0 && !settings.singleSelection">
                 <div class="c-token" *ngFor="let item of selectedItems;trackBy: trackByFn.bind(this);let k = index" [hidden]="k > settings.badgeShowLimit-1">
-                    <span *ngIf="!badgeTempl" class="c-label">{{item[settings.labelKey]}}</span>
+                    <span *ngIf="!badgeTempl" class="c-label">{{getObjectKey(item,settings.labelKey)}}</span>
                     <span *ngIf="badgeTempl" class="c-label">
                         <c-templateRenderer [data]="badgeTempl" [item]="item"></c-templateRenderer>
                     </span>
@@ -62,15 +62,12 @@
             </span>
         </div>
     </div>
-    <div [setPosition]="selectedListHeight?.val" class="dropdown-list" [ngClass]="{'dropdown-list-top': settings.position == 'top'}"
-        [hidden]="!isActive">
+    <div [setPosition]="selectedListHeight?.val" class="dropdown-list" [ngClass]="{'dropdown-list-top': settings.position == 'top'}" [hidden]="!isActive">
         <div [ngClass]="{'arrow-up': settings.position == 'bottom', 'arrow-down': settings.position == 'top'}" class="arrow-2"></div>
         <div [ngClass]="{'arrow-up': settings.position == 'bottom', 'arrow-down': settings.position == 'top'}"></div>
         <div class="list-area">
-            <div class="pure-checkbox select-all" *ngIf="settings.enableCheckAll && !settings.singleSelection && !settings.limitSelection"
-                (click)="toggleSelectAll()">
-                <input *ngIf="settings.showCheckbox" type="checkbox" [checked]="isSelectAll" [disabled]="settings.limitSelection == selectedItems?.length"
-                />
+            <div class="pure-checkbox select-all" *ngIf="settings.enableCheckAll && !settings.singleSelection && !settings.limitSelection" (click)="toggleSelectAll()">
+                <input *ngIf="settings.showCheckbox" type="checkbox" [checked]="isSelectAll" [disabled]="settings.limitSelection == selectedItems?.length" />
                 <label>
                 <span [hidden]="isSelectAll">{{settings.selectAllText}}</span>
                 <span [hidden]="!isSelectAll">{{settings.unSelectAllText}}</span>
@@ -99,10 +96,8 @@
 </svg>
 
                 </span>
-                <input class="c-input" *ngIf="!settings.lazyLoading && !searchTempl" #searchInput type="text" [placeholder]="settings.searchPlaceholderText"
-                    [(ngModel)]="filter">
-                <input class="c-input" *ngIf="settings.lazyLoading && !searchTempl" #searchInput type="text" [placeholder]="settings.searchPlaceholderText"
-                    (keyup)="filterInfiniteList($event)">
+                <input class="c-input" *ngIf="!settings.lazyLoading && !searchTempl" #searchInput type="text" [placeholder]="settings.searchPlaceholderText" [(ngModel)]="filter">
+                <input class="c-input" *ngIf="settings.lazyLoading && !searchTempl" #searchInput type="text" [placeholder]="settings.searchPlaceholderText" (keyup)="filterInfiniteList($event)">
                 <c-templateRenderer *ngIf="searchTempl" [data]="searchTempl" [item]="item"></c-templateRenderer>
             </div>
             <ul *ngIf="!settings.groupBy" [style.maxHeight]="settings.maxHeight+'px'" class="lazyContainer">
@@ -116,7 +111,7 @@
                 <span *ngIf="!itemTempl && !settings.lazyLoading">
         <li *ngFor="let item of data | listFilter:filter : settings.searchBy; let i = index;" (click)="onItemClick(item,i,$event)" class="pure-checkbox">
             <input *ngIf="settings.showCheckbox" type="checkbox" [checked]="isSelected(item)" [disabled]="settings.limitSelection == selectedItems?.length && !isSelected(item)"/>
-            <label>{{item[settings.labelKey]}}</label>
+            <label> {{getObjectKey(item,settings.labelKey)}}</label>
         </li>
         </span>
                 <span *ngIf="!itemTempl && settings.lazyLoading">
@@ -125,7 +120,7 @@
             
         <li *ngFor="let item of chunkArray | listFilter:filter : settings.searchBy; let i = index;" (click)="onItemClick(item,i,$event)" style="position: absolute;width: 100%;" class="pure-checkbox" [styleProp]="chunkIndex[i]">
             <input *ngIf="settings.showCheckbox" type="checkbox" [checked]="isSelected(item)" [disabled]="settings.limitSelection == selectedItems?.length && !isSelected(item)"/>
-            <label>{{item[settings.labelKey]}}</label>
+            <label>{{getObjectKey(item,settings.labelKey)}}</label>
         </li>
         </div>
         </span>
@@ -143,7 +138,7 @@
                     <span *ngIf="!itemTempl">
         <li *ngFor="let item of obj.value | listFilter:filter : settings.searchBy; let i = index;" (click)="onItemClick(item,i,$event)" class="pure-checkbox">
             <input *ngIf="settings.showCheckbox" type="checkbox" [checked]="isSelected(item)" [disabled]="settings.limitSelection == selectedItems?.length && !isSelected(item)"/>
-            <label>{{item[settings.labelKey]}}</label>
+            <label>{{getObjectKey(item,settings.labelKey)}}</label>
         </li>
         </span>
                 </ul>
