@@ -55,7 +55,7 @@ export class BasicExample implements OnInit {
     }
     cssgist: boolean = false;
     title: string = "Basic example";
-    tsgist: string = "CuppaLabs/ee72fbc7b21dad7e4e7664c5b1553235";
+    tsgist: string = "AmolBorse/181e799462ae00549ddceef3652f0eea";
     htmlgist: string = "CuppaLabs/eb78d42ab7971fda6493586e329bfdb8";
     tstitle: string = "basic.ts"
     htmltitle: string = "basic.html";

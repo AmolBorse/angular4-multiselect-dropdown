@@ -1,7 +1,7 @@
 {
-    "name": "angular2-multiselect-dropdown",
+    "name": "angular4-multiselect-dropdown",
     "version": "2.9.0",
-    "description": "Angular 2 and angular 4 multiselect dropdown component.",
+    "description": "Angular 2 and Angular 4 multiselect dropdown component.",
     "keywords": [
         "angular 2 multiselect dropdown",
         "angular 4 multiselect dropdown",
@@ -10,7 +10,7 @@
     ],
     "license": "MIT",
     "angular-cli": {},
-    "author": "Pradeep Terli",
+    "author": "Amol Borse",
     "scripts": {
         "ng": "ng",
         "start": "ng serve",

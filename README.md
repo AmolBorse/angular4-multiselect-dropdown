@@ -6,7 +6,7 @@
 Angular 2 multiselect dropdown component for web applications. Easy to integrate and use.
 
 
-# [Documentation](http://cuppalabs.github.io/components/multiselectDropdown) | [Demos / Examples](https://cuppalabs.github.io/angular2-multiselect-dropdown).
+<!-- # [Documentation](http://cuppalabs.github.io/components/multiselectDropdown) | [Demos / Examples](https://cuppalabs.github.io/angular2-multiselect-dropdown). -->
 
 ## Table of Contents
 ##### 1. Getting Started
