@@ -1,67 +1,76 @@
-import { Component, OnInit, OnDestroy, NgModule, TemplateRef, AfterContentInit, ContentChild, EmbeddedViewRef, OnChanges, ViewContainerRef, ViewEncapsulation, Input, Output, EventEmitter, ElementRef, AfterViewInit, Pipe, PipeTransform, Directive } from '@angular/core';
+import { Component, OnInit, OnDestroy, NgModule, TemplateRef, AfterContentInit,
+    ContentChild, EmbeddedViewRef, OnChanges, ViewContainerRef, ViewEncapsulation,
+    Input, Output, EventEmitter, ElementRef, AfterViewInit, Pipe, PipeTransform, Directive } from '@angular/core';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
-import { CommonModule }       from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'c-item',
-  template: ``
+    // tslint:disable-next-line:component-selector
+    selector: 'c-item',
+    template: ``
 })
 
-export class Item { 
+// tslint:disable-next-line:component-class-suffix
+export class Item {
 
     @ContentChild(TemplateRef) template: TemplateRef<any>
-    constructor() {   
+    constructor() {
     }
 
 }
 
 @Component({
-  selector: 'c-badge',
-  template: ``
+    // tslint:disable-next-line:component-selector
+    selector: 'c-badge',
+    template: ``
 })
 
-export class Badge { 
+// tslint:disable-next-line:component-class-suffix
+export class Badge {
 
     @ContentChild(TemplateRef) template: TemplateRef<any>
-    constructor() {   
+    constructor() {
     }
 
 }
 
 @Component({
-  selector: 'c-search',
-  template: ``
+    // tslint:disable-next-line:component-selector
+    selector: 'c-search',
+    template: ``
 })
-
-export class Search { 
+// tslint:disable-next-line:component-class-suffix
+export class Search {
 
     @ContentChild(TemplateRef) template: TemplateRef<any>
-    constructor() {   
+    constructor() {
     }
 
 }
 @Component({
-  selector: 'c-templateRenderer',
-  template: ``
+    // tslint:disable-next-line:component-selector
+    selector: 'c-templateRenderer',
+    template: ``
 })
 
-export class TemplateRenderer implements OnInit, OnDestroy { 
+// tslint:disable-next-line:component-class-suffix
+export class TemplateRenderer implements OnInit, OnDestroy {
 
     @Input() data: any
     @Input() item: any
     view: EmbeddedViewRef<any>;
 
-    constructor(public viewContainer: ViewContainerRef) {   
+    constructor(public viewContainer: ViewContainerRef) {
     }
     ngOnInit() {
         this.view = this.viewContainer.createEmbeddedView(this.data.template, {
             '\$implicit': this.data,
-            'item':this.item
+            'item': this.item
         });
     }
-	
+
     ngOnDestroy() {
-		this.view.destroy();
-	}
+        this.view.destroy();
+    }
 
 }

@@ -5,7 +5,9 @@
     overflow: auto;
     padding-right: 0px;
 }
-.left-sidebar, .right-sidebar {
+
+.left-sidebar,
+.right-sidebar {
     width: 330px;
     max-width: 315px;
     min-width: 315px;
@@ -14,20 +16,23 @@
 .outer-wrapper {
     padding: 30px;
 }
-.center-content{
+
+.center-content {
     background: #ffffff;
-    border: 1px solid rgba(0,0,0,.125);
+    border: 1px solid rgba(0, 0, 0, .125);
     border-radius: 3px;
     padding: 15px;
     margin-left: 330px;
     margin-top: 55px;
 }
-.nav-sub{
+
+.nav-sub {
     width: 100%;
     box-shadow: none;
     margin-bottom: 6px;
     padding: 0px;
 }
+
 .nav-wrapper {
     padding: 0px 10px;
 }
