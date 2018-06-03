@@ -14,10 +14,10 @@ export class DynamicDataSetsExample implements OnInit {
     ngOnInit() {
 
         this.settings = {
-            text: "Select Countries",
+            text: 'Select Countries',
             selectAllText: 'Select All',
             unSelectAllText: 'UnSelect All',
-            classes: "myclass custom-class"
+            classes: 'myclass custom-class'
         };
         this.loadDataSet2();
     }
@@ -37,10 +37,10 @@ export class DynamicDataSetsExample implements OnInit {
     }
     loadDataSet1() {
         this.settings = {
-            text: "Select Fruits",
+            text: 'Select Fruits',
             selectAllText: 'Select All',
             unSelectAllText: 'UnSelect All',
-            classes: "myclass custom-class"
+            classes: 'myclass custom-class'
         };
         this.selectedItems = [];
         this.itemList = [];
@@ -51,10 +51,10 @@ export class DynamicDataSetsExample implements OnInit {
     }
     loadDataSet2() {
         this.settings = {
-            text: "Select Countries",
+            text: 'Select Countries',
             selectAllText: 'Select All',
             unSelectAllText: 'UnSelect All',
-            classes: "myclass custom-class"
+            classes: 'myclass custom-class'
         };
         this.selectedItems = [];
         this.itemList = [];
@@ -64,11 +64,11 @@ export class DynamicDataSetsExample implements OnInit {
         }
     }
     cssgist: boolean = false;
-    title: string = "Dynamic datasets loading";
-    tsgist: string = "CuppaLabs/302d580f91bc40611b2474558d98fbf2";
-    htmlgist: string = "CuppaLabs/eb78d42ab7971fda6493586e329bfdb8";
-    mockgist: string = "CuppaLabs/b3e947ec83710307a3b8680a2ff89693";
-    tstitle: string = "dynamicData.ts"
-    htmltitle: string = "dynamicData.html";
-    mocktitle: string = "mock-data.ts";
+    title: string = 'Dynamic datasets loading';
+    tsgist: string = 'CuppaLabs/302d580f91bc40611b2474558d98fbf2';
+    htmlgist: string = 'CuppaLabs/eb78d42ab7971fda6493586e329bfdb8';
+    mockgist: string = 'CuppaLabs/b3e947ec83710307a3b8680a2ff89693';
+    tstitle: string = 'dynamicData.ts'
+    htmltitle: string = 'dynamicData.html';
+    mocktitle: string = 'mock-data.ts';
 }

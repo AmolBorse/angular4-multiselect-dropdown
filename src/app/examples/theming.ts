@@ -13,26 +13,26 @@ export class ThemingExample implements OnInit {
     ngOnInit() {
 
         this.itemList = [
-            { "countryId": 1, "itemName": "India" },
-            { "countryId": 2, "itemName": "Singapore" },
-            { "countryId": 3, "itemName": "Australia" },
-            { "countryId": 4, "itemName": "Canada" },
-            { "countryId": 5, "itemName": "South Korea" },
-            { "countryId": 6, "itemName": "Brazil" }
+            { 'countryId': 1, 'itemName': 'India' },
+            { 'countryId': 2, 'itemName': 'Singapore' },
+            { 'countryId': 3, 'itemName': 'Australia' },
+            { 'countryId': 4, 'itemName': 'Canada' },
+            { 'countryId': 5, 'itemName': 'South Korea' },
+            { 'countryId': 6, 'itemName': 'Brazil' }
         ];
 
         this.selectedItems = [
-            { "countryId": 1, "itemName": "India" },
-            { "countryId": 2, "itemName": "Singapore" },
-            { "countryId": 3, "itemName": "Australia" },
-            { "countryId": 4, "itemName": "Canada" }];
+            { 'countryId': 1, 'itemName': 'India' },
+            { 'countryId': 2, 'itemName': 'Singapore' },
+            { 'countryId': 3, 'itemName': 'Australia' },
+            { 'countryId': 4, 'itemName': 'Canada' }];
 
         this.settings = {
-            text: "Select Countries",
+            text: 'Select Countries',
             selectAllText: 'Select All',
             unSelectAllText: 'UnSelect All',
-            classes: "myclass custom-class",
-            primaryKey: "countryId"
+            classes: 'myclass custom-class',
+            primaryKey: 'countryId'
         };
     }
     onItemSelect(item: any) {
@@ -50,9 +50,9 @@ export class ThemingExample implements OnInit {
         console.log(items);
     }
     cssgist: boolean = false;
-    title: string = "Basic example";
-    tsgist: string = "CuppaLabs/ee72fbc7b21dad7e4e7664c5b1553235";
-    htmlgist: string = "CuppaLabs/eb78d42ab7971fda6493586e329bfdb8";
-    tstitle: string = "basic.ts"
-    htmltitle: string = "basic.html";
+    title: string = 'Basic example';
+    tsgist: string = 'CuppaLabs/ee72fbc7b21dad7e4e7664c5b1553235';
+    htmlgist: string = 'CuppaLabs/eb78d42ab7971fda6493586e329bfdb8';
+    tstitle: string = 'basic.ts'
+    htmltitle: string = 'basic.html';
 }

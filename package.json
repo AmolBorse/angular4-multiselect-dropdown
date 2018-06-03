@@ -37,7 +37,7 @@
         "preversion": "npm run ci",
         "test": "karma start",
         "test:watch": "karma start --auto-watch --no-single-run",
-        "tslint": "tslint",
+        "tslint": "tslint --exclude 'src/app/examples/**/*.ts'",
         "github-pages": "ng build --base-href /angular2-multiselect-dropdown/"
     },
     "private": false,

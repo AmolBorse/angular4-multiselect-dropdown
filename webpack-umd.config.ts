@@ -8,10 +8,10 @@ const pkg = JSON.parse(fs.readFileSync('./package.json').toString());
 
 export default {
   entry: {
-    'index.umd': './src/app/angular2-multiselect-dropdown/index.ts',
-    'index.umd.min': './src/app/angular2-multiselect-dropdown/index.ts',
-     'angular2-multiselect-dropdown.umd': './src/app/angular2-multiselect-dropdown/angular2-multiselect-dropdown.ts',
-    'angular2-multiselect-dropdown.umd.min': './src/app/angular2-multiselect-dropdown/angular2-multiselect-dropdown.ts'
+    'index.umd': './src/app/angular4-multiselect-dropdown/index.ts',
+    'index.umd.min': './src/app/angular4-multiselect-dropdown/index.ts',
+     'angular4-multiselect-dropdown.umd': './src/app/angular4-multiselect-dropdown/angular4-multiselect-dropdown.ts',
+    'angular4-multiselect-dropdown.umd.min': './src/app/angular4-multiselect-dropdown/angular4-multiselect-dropdown.ts'
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -39,7 +39,7 @@ export default {
             }
           },
           {
-            loader: 'angular2-template-loader'
+            loader: 'angular4-template-loader'
           }
         ],
         exclude: [

@@ -14,13 +14,13 @@ export class CustomSearchExample implements OnInit {
     ngOnInit() {
 
         this.settings = {
-            text: "Select Countries",
+            text: 'Select Countries',
             selectAllText: 'Select All',
             unSelectAllText: 'UnSelect All',
-            classes: "myclass custom-class",
-            primaryKey: "alpha3Code",
-            labelKey: "name",
-            noDataLabel: "Search Countries...",
+            classes: 'myclass custom-class',
+            primaryKey: 'alpha3Code',
+            labelKey: 'name',
+            noDataLabel: 'Search Countries...',
             enableSearchFilter: true,
             searchBy: ['name', 'capital']
         };
@@ -42,7 +42,7 @@ export class CustomSearchExample implements OnInit {
     onSearch(evt: any) {
         console.log(evt.target.value);
         this.itemList = [];
-        this.http.get('https://restcountries.eu/rest/v2/name/'+evt.target.value+'?fulltext=true')
+        this.http.get('https://restcountries.eu/rest/v2/name/' + evt.target.value + '?fulltext=true')
             .subscribe(res => {
                 console.log(res);
                 this.itemList = res;
@@ -51,9 +51,9 @@ export class CustomSearchExample implements OnInit {
             });
     }
     cssgist: boolean = false;
-    title: string = "Custom Search / Search from API";
-    tsgist: string = "CuppaLabs/1bab5ecbbb22727eb0afe49848a454f0";
-    htmlgist: string = "CuppaLabs/7f0d8ea9f9cfe9eec2cc1699affd2c14";
-    tstitle: string = "customSearch.ts"
-    htmltitle: string = "customSearch.html";
+    title: string = 'Custom Search / Search from API';
+    tsgist: string = 'CuppaLabs/1bab5ecbbb22727eb0afe49848a454f0';
+    htmlgist: string = 'CuppaLabs/7f0d8ea9f9cfe9eec2cc1699affd2c14';
+    tstitle: string = 'customSearch.ts'
+    htmltitle: string = 'customSearch.html';
 }

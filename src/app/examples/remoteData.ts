@@ -6,28 +6,28 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RemoteDataExample implements OnInit {
 
-    itemList:any = [];
+    itemList: any = [];
     selectedItems = [];
     settings = {};
 
     constructor(private http: HttpClient) { }
     ngOnInit() {
         this.http.get('https://restcountries.eu/rest/v2/all')
-        .subscribe(res => {
-            console.log(res);
-            this.itemList = res;
-        },error => {
+            .subscribe(res => {
+                console.log(res);
+                this.itemList = res;
+            }, error => {
 
-        });
+            });
         this.settings = {
-            text: "Select Countries",
+            text: 'Select Countries',
             selectAllText: 'Select All',
             unSelectAllText: 'UnSelect All',
-            classes: "myclass custom-class",
-            primaryKey: "alpha3Code",
-            labelKey: "name",
+            classes: 'myclass custom-class',
+            primaryKey: 'alpha3Code',
+            labelKey: 'name',
             enableSearchFilter: true,
-            searchBy: ['name','capital']
+            searchBy: ['name', 'capital']
         };
     }
     onItemSelect(item: any) {
@@ -44,13 +44,13 @@ export class RemoteDataExample implements OnInit {
     onDeSelectAll(items: any) {
         console.log(items);
     }
-    onSearch(evt: any){
+    onSearch(evt: any) {
         console.log(evt.target.value);
     }
     cssgist: boolean = false;
-    title: string = "Data from remote API example";
-    tsgist: string = "CuppaLabs/ee72fbc7b21dad7e4e7664c5b1553235";
-    htmlgist: string = "CuppaLabs/eb78d42ab7971fda6493586e329bfdb8";
-    tstitle: string = "basic.ts"
-    htmltitle: string = "basic.html";
+    title: string = 'Data from remote API example';
+    tsgist: string = 'CuppaLabs/ee72fbc7b21dad7e4e7664c5b1553235';
+    htmlgist: string = 'CuppaLabs/eb78d42ab7971fda6493586e329bfdb8';
+    tstitle: string = 'basic.ts'
+    htmltitle: string = 'basic.html';
 }
