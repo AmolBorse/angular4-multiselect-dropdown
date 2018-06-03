@@ -1,12 +1,12 @@
-# Angular2 Multiselect Dropdown
-[![npm version](https://img.shields.io/npm/v/angular2-multiselect-dropdown.svg)](https://www.npmjs.com/package/angular2-multiselect-dropdown)
-[![downloads](https://img.shields.io/npm/dt/angular2-multiselect-dropdown.svg)](https://www.npmjs.com/package/angular2-multiselect-dropdown)
-[![license](https://img.shields.io/github/license/cuppalabs/angular2-multiselect-dropdown.svg)](https://www.npmjs.com/package/angular2-multiselect-dropdown)
+# Angular4 Multiselect Dropdown
+[![npm version](https://img.shields.io/npm/v/angular4-multiselect-dropdown.svg)](https://www.npmjs.com/package/angular4-multiselect-dropdown)
+[![downloads](https://img.shields.io/npm/dt/angular4-multiselect-dropdown.svg)](https://www.npmjs.com/package/angular4-multiselect-dropdown)
+[![license](https://img.shields.io/github/license/cuppalabs/angular4-multiselect-dropdown.svg)](https://www.npmjs.com/package/angular4-multiselect-dropdown)
 
-Angular 2 multiselect dropdown component for web applications. Easy to integrate and use.
+Angular 4 multiselect dropdown component for web applications. Easy to integrate and use.
+(This is modified version of https://github.com/CuppaLabs/angular2-multiselect-dropdown)
 
-
-<!-- # [Documentation](http://cuppalabs.github.io/components/multiselectDropdown) | [Demos / Examples](https://cuppalabs.github.io/angular2-multiselect-dropdown). -->
+<!-- # [Documentation](http://cuppalabs.github.io/components/multiselectDropdown) | [Demos / Examples](https://cuppalabs.github.io/angular4-multiselect-dropdown). -->
 
 ## Table of Contents
 ##### 1. Getting Started
@@ -28,16 +28,16 @@ Angular 2 multiselect dropdown component for web applications. Easy to integrate
 
 ## Getting Started
 ### Installation
-- The Mutiselect Dropdown package is published on the [npm](https://www.npmjs.com/package/angular2-multiselect-dropdown) Registry. 
+- The Mutiselect Dropdown package is published on the [npm](https://www.npmjs.com/package/angular4-multiselect-dropdown) Registry. 
 - Install the package :
-    `npm install angular2-multiselect-dropdown`
+    `npm install angular4-multiselect-dropdown`
 
 - Once installed import `AngularMultiSelectModule` from the installed package into your module as follows:
 
 ### Usage
 Import `AngularMultiSelectModule` into `NgModule` in `app.module.ts`
 ```js
-import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown/angular2-multiselect-dropdown';
+import { AngularMultiSelectModule } from 'angular4-multiselect-dropdown/angular4-multiselect-dropdown';
 
 @NgModule({
   // ...
@@ -106,18 +106,18 @@ export class AppComponent implements OnInit {
 
 Add the following component tag in you template 
 ```html
-<angular2-multiselect [data]="dropdownList" [(ngModel)]="selectedItems" 
+<angular4-multiselect [data]="dropdownList" [(ngModel)]="selectedItems" 
     [settings]="dropdownSettings" 
     (onSelect)="onItemSelect($event)" 
     (onDeSelect)="OnItemDeSelect($event)"
     (onSelectAll)="onSelectAll($event)"
-    (onDeSelectAll)="onDeSelectAll($event)"></angular2-multiselect>
+    (onDeSelectAll)="onDeSelectAll($event)"></angular4-multiselect>
 
 ```
 ### Template - For custom html of menu item
 
 ```html
-<angular2-multiselect [data]="dropdownList" [(ngModel)]="selectedItems" [settings]="dropdownSettings">
+<angular4-multiselect [data]="dropdownList" [(ngModel)]="selectedItems" [settings]="dropdownSettings">
   <c-item>
           <ng-template let-item="item">
             <label style="color: #333;min-width: 150px;">{{item.itemName}}</label>
@@ -125,21 +125,21 @@ Add the following component tag in you template
             <label>Capital - {{item.capital}}</label>
           </ng-template>
   </c-item>    
-</angular2-multiselect>
+</angular4-multiselect>
 
 ```
 
 ### Template - For custom html of Selected item - badge
 
 ```html
-<angular2-multiselect [data]="dropdownList" [(ngModel)]="selectedItems" [settings]="dropdownSettings">
+<angular4-multiselect [data]="dropdownList" [(ngModel)]="selectedItems" [settings]="dropdownSettings">
   <c-badge>
            <ng-template let-item="item">
             <label style="margin: 0px;">{{item.itemName}}</label>
             <img [src]="item.image" style="width: 16px; margin-right: 5px;" />
            </ng-template>
   </c-badge>  
-</angular2-multiselect>
+</angular4-multiselect>
 
 ```
 
@@ -150,13 +150,13 @@ Add the following component tag in you template
 <form (ngSubmit)="onSubmit()" #loginForm="ngForm" style="border: 1px solid #ccc; padding: 10px;">
         <div class="form-group">
             <label for="name">Skills</label>
-            <angular2-multiselect [data]="itemList" [(ngModel)]="formModel.skills" 
+            <angular4-multiselect [data]="itemList" [(ngModel)]="formModel.skills" 
                                   [settings]="settings" 
                                   (onSelect)="onItemSelect($event)"
                                   (onDeSelect)="OnItemDeSelect($event)" 
                                   (onSelectAll)="onSelectAll($event)" 
                                   (onDeSelectAll)="onDeSelectAll($event)" name="skills">
-            </angular2-multiselect>
+            </angular4-multiselect>
         </div>
 </form>
 
@@ -179,13 +179,13 @@ formModel = {
 <form [formGroup]="userForm" novalidate style="border: 1px solid #ccc; padding: 10px;">
         <div class="form-group">
             <label for="name">Skills</label>
-           <angular2-multiselect [data]="itemList" [(ngModel)]="selectedItems" 
+           <angular4-multiselect [data]="itemList" [(ngModel)]="selectedItems" 
                                   [settings]="settings" 
                                   (onSelect)="onItemSelect($event)"
                                   (onDeSelect)="OnItemDeSelect($event)" 
                                   (onSelectAll)="onSelectAll($event)" 
                                   (onDeSelectAll)="onDeSelectAll($event)" formControlName="skills">
-            </angular2-multiselect>
+            </angular4-multiselect>
         </div>
 </form>
 
@@ -220,7 +220,7 @@ The following list of settings are supported by the component. Configure the set
 | searchPlaceholderText | String | Custom text for the search placeholder text. Default value would be 'Search' | 'Search' |
 | groupBy | String | Name of the field by which the list should be grouped. | none |
 | searchAutofocus | Boolean | Autofocus search input field| true |
-| labelKey | String | The property name which should be rendered as label in the dropdown| itemName |
+| labelKey | String | The property name(Object propery nested -e.g item.data.value) which should be rendered as label in the dropdown | itemName |
 | primaryKey | String | The property by which the object is identified. Default is 'id'.| id |
 | position | String | Set the position of the dropdown list to 'top' or 'bottom'| bottom |
 | noDataLabel | String | Label text when no data is available in the list| 'No Data Available' |
