@@ -1,6 +1,6 @@
 {
     "name": "angular4-multiselect-dropdown",
-    "version": "2.9.0",
+    "version": "1.0.0",
     "description": "Angular 2 and Angular 4 multiselect dropdown component.",
     "keywords": [
         "angular 2 multiselect dropdown",
@@ -21,11 +21,11 @@
         "build:umd": "webpack --config webpack-umd.config.ts",
         "build:umd:watch": "npm run build:umd -- --watch",
         "build:watch": "concurrently --raw \"npm run build:umd:watch\" \"npm run build:esm:watch\"",
-        "ci": "npm run lint && npm run test && npm run build && npm run docs",
+        "ci": "npm run lint && npm run build && npm run docs",
         "clean:all": "npm run clean:tmp && rimraf node_modules",
         "clean:tmp": "rimraf coverage dist tmp docs",
         "codecov": "cat coverage/lcov.info | codecov",
-        "docs": "compodoc -p tsconfig.json -d docs --disableCoverage --disablePrivateOrInternalSupport",
+        "docs": "compodoc -p tsconfig.json -d docs --disableCoverage --disablePrivate --disableInternal",
         "explorer": "source-map-explorer ./dist/index.umd.js",
         "gh-pages": "rimraf docs && npm run docs && gh-pages -d docs",
         "lint": "npm run tslint 'src/**/*.ts'",

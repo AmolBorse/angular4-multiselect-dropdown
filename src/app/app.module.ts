@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { AngularMultiSelectModule } from './angular2-multiselect-dropdown/multiselect.component';
+import { AngularMultiSelectModule } from './angular4-multiselect-dropdown/multiselect.component';
 import { AppRouterModule } from './app.router';
 import { TabViewModule } from 'primeng/primeng';
 import { RouterModule } from '@angular/router';

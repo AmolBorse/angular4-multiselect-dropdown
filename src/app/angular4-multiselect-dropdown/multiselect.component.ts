@@ -27,7 +27,7 @@ const noop = () => {
 
 @Component({
     // tslint:disable-next-line:component-selector
-    selector: 'angular2-multiselect',
+    selector: 'angular4-multiselect',
     templateUrl: './multiselect.component.html',
     // tslint:disable-next-line:use-host-property-decorator
     host: { '[class]': 'defaultSettings.classes' },
@@ -405,10 +405,10 @@ export class AngularMultiSelect implements OnInit, ControlValueAccessor, OnChang
         }
     }
 
-    public getObjectKey(nestedObj: Object, objPath: string) {
+    public getObjectKey(nestedObj: any, objPath: string) {
         const pathArr = objPath.split('.');
-        return pathArr.reduce((obj, key) =>
-            (obj && obj[key] !== 'undefined') ? obj[key] : undefined, nestedObj);
+        return pathArr.reduce((obj: any, key: string) =>
+            (obj && <any>obj[key] !== 'undefined') ? obj[key] : undefined, nestedObj);
     }
 
 }
